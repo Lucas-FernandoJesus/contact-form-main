@@ -15,66 +15,94 @@
 
   <body>
     <div class="content">
-      <form class="forms">
+      <!-- Mensagem geral de feedback -->
+      <span id="msg"></span>
+
+      <form class="forms" id="form-validation">
         <h1>Contact Us</h1>
+
         <div class="inputs">
           <ul>
             <li>
-              <label for="name">First Name *</label><br />
-              <input type="text" required />
+              <label for="input-primeiro-nome">First Name *</label><br />
+              <input
+                type="text"
+                class="input-validation"
+                name="primeiro-nome"
+                id="input-primeiro-nome"
+              />
+              <span class="error" id="error-primeiro-nome"></span>
             </li>
             <li>
-              <label for="name">Last Name *</label><br />
-              <input type="text" required />
+              <label for="input-ultimo-nome">Last Name *</label><br />
+              <input
+                type="text"
+                class="input-validation"
+                name="ultimo-nome"
+                id="input-ultimo-nome"
+              />
+              <span class="error" id="error-ultimo-nome"></span>
             </li>
           </ul>
         </div>
 
-        <!-- This field is required  This field is required  -->
         <div class="email">
-          <label for="name">Email Address *</label>
-          <input type="email" required />
+          <label for="input-email">Email Address *</label>
+          <input
+            type="email"
+            class="input-validation"
+            name="email"
+            id="input-email"
+          />
+          <span class="error" id="error-email"></span>
         </div>
-        <!-- Please enter a valid email address This field is
-      required -->
 
-        <div class="query">
-          <label for="">Query Type *</label>
-          <div class="query-inputs">
-            <ul class="query-inputs">
-              <li>
-                <input type="radio" name="" id="" required />
-                <label for="">General Enquiry</label>
-              </li>
-              <li>
-                <input type="radio" name="" id="" required />
-                <label for="">Support Request</label>
-              </li>
-            </ul>
-          </div>
-          <!-- Please select a query type-->
-        </div>
+        <fieldset>
+          <legend>Query Type *</legend>
+          <ul class="query-inputs">
+            <li>
+              <input
+                type="radio"
+                id="opcao-geral"
+                name="query-type"
+                value="general"
+                
+              <label for="opcao-geral">General Enquiry</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                id="opcao-suporte"
+                name="query-type"
+                value="support"
+                
+              <label for="opcao-suporte">Support Request</label>
+            </li>
+          </ul>
+          <span class="error" id="error-query-type"></span>
+        </fieldset>
 
         <div class="message">
-          <label class="message-label">Message *</label>
-          <input class="message-input" type="text" required />
-          <!-- This field is required -->
+          <label for="input-message">Message *</label>
+          <textarea
+            id="input-message"
+            name="message"
+            class="message-input"
+          ></textarea>
+          <span class="error" id="error-message"></span>
         </div>
 
         <div class="check-box">
-          <input type="checkbox" name="" id="" required />
-          <label for="">I consent to being contacted by the team</label>
+          <input type="checkbox" name="terms" 
+            >I consent to being contacted by the team</label
+          >
+          <span class="error" id="error-terms"></span>
         </div>
 
-        <!-- To submit this form, please consent to being contacted Submit Message Sent!
-      Thanks for completing the form. We'll be in touch soon! -->
-        <input class="submit" type="button" value="Submit" />
+        <input class="submit" type="submit" value="submit" />
       </form>
     </div>
-    <!-- <div class="attribution">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+
+    <script src="./assets/index.js"></script>
   </body>
 </html>
